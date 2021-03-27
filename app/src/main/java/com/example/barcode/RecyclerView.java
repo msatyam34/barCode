@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,10 @@ public class RecyclerView extends AppCompatActivity {
         Intent intent = getIntent();
         String[] array = intent.getStringArrayExtra("sqlData");
 
+        Toast.makeText(this,array.length+"",Toast.LENGTH_SHORT).show();
+
         for(String lang:array){
+
             list.add(lang);
         }
         initRecyclerView();
